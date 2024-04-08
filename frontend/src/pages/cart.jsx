@@ -25,7 +25,7 @@ export const Cart = () => {
             <Link to="/store">
                 <FaHome />
             </Link>
-            <h1>Biblioteca</h1>
+            <h1>Jogos Salvos</h1>
             <div className='user'>
                 <Link to="/login">
                     <FaUser />
