@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import '../css/game.css'
+import { IoMdHome } from "react-icons/io";
 
 const GamePage = () => {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const [game, setGame] = useState(null);
 
     useEffect(() => {
@@ -16,20 +17,30 @@ const GamePage = () => {
     }, [id])
 
     return (
-        <div className="gameDetails">
-            {game ? (
-                <>
-                    <h2>{game.name}</h2>
-                    <img src={game.background_image} alt={game.name} />
-                </>
-            ) : (
-                <p>Carregando...</p>
-            )}
+        <div>
+            <div className='Guia'>
+                    <div className='storeh'>
+                        <Link to='/store'>
+                            <IoMdHome />
+                        </Link>
+                    </div>
+                </div>
+        <div className="boxGame">
+            <div className="gameDetails">
+                {game ? (
+                    <> 
+                        <div className='cardGame'>
+                            <h2>{game.name}</h2>
+                            <img src={game.background_image} alt={game.name} />
+                        </div>
+                    </>
+                ) : (
+                    <p>Carregando...</p>
+                )}
+            </div>
+        </div>
         </div>
     )
 }
 
-export default GamePage;
-
-
-
+export default GamePage

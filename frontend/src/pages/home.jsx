@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Content } from '../components/content'
-
+ 
 function Home() {
   return (
     <div className='Home'>
@@ -8,5 +8,5 @@ function Home() {
     </div>
   )
 }
-
+ 
 export default Home

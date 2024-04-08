@@ -12,10 +12,6 @@
     align-items: center;
 }
 
-user{
-    color:rgb(228, 180, 249);
-}
-
 .separator {
     height: 20px;
 }
@@ -53,7 +49,7 @@ input[type="text"]::placeholder {
 }
 
 button {
-    background: linear-gradient(180deg, rgb(56, 0, 82) 0%, rgb(174, 0, 255) 50%, rgb(59, 0, 87) 100%);
+    background: linear-gradient(180deg, rgb(234, 184, 255) 0%, rgb(177, 95, 255) 50%, rgb(234, 184, 255) 100%);
     text-align: center;
     color: #fff;
     border: none;
@@ -64,7 +60,18 @@ button {
 }
 
 button:hover {
-    background-color: #b902ec;
+    background-color: #dc5dff;
+}
+
+.buttoncart {
+    background: rgb(234, 184, 255) 0%;
+    text-align: center;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .GamesArea {
@@ -78,9 +85,7 @@ button:hover {
     text-shadow: -1px -1px 0 #818181,  
     1px -1px 0 #717171,
    -1px  1px 0 #2a2a2a,
-    1px  1px 0 #000000;
-
-    
+    1px  1px 0 #000000;   
 }
 
 .GamesArea>div {
@@ -125,4 +130,44 @@ button:hover {
 .card h4 {
     text-align: center;
     margin: 0;
+}
+
+.gameDatails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+
+.gameDetails {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardGame {
+    text-align: center;
+}
+
+.cardGame h2 {
+    margin-bottom: 10px;
+}
+
+.cardGame img {
+    width: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading{
+    text-align: center;
+    color: #fff;
 }

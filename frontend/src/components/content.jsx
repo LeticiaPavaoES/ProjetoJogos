@@ -1,23 +1,21 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Store } from '../pages/store.jsx';
+import React from "react";
+import { Route, BrowserRouter } from "react-router-dom";
+import Store from '../pages/store.jsx';
+import Login from '../pages/login.jsx'; 
+import GamePage from '../pages/gamepage.jsx';
+import Cadastro from '../pages/cadastro.jsx';
+import Cart from '../pages/cart.jsx';
 
-
-export const Content = () => {
-    return (
-        <Switch> 
-            <Route exact path='/' component={ Store } />
-           
-        </Switch>
-    );
+const Routes = () => {
+   return(
+       <BrowserRouter>
+           <Route component = { Store }  path="/" exact />
+           <Route component = { Login }  path="/login" />
+           <Route component = { GamePage }  path="/gamepage" />
+           <Route component = { Cadastro }  path="/cadastro" />
+           <Route component = { Cart }  path="/cart" />
+       </BrowserRouter>
+   )
 }
 
-export default Content
-
-/*
-import { Login } from '../pages/login.jsx'; 
-import { GamePage } from '../pages/gamepage.jsx';
-import { Cadastro } from '../pages/cadastro.jsx';
-<Route path='/login' component={ Login } /> 
-<Route path='/gamepage' component={ GamePage }/>
-<Route path='/cadastro' component={ Cadastro }/>*/
+export default Routes

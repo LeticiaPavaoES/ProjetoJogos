@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import '../css/logins.css'
-
+ 
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-
+ 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -21,34 +21,34 @@ function Login() {
             setError('Credenciais inválidas. Por favor, tente novamente.');
         }
     }
-
+ 
     return (
         <div className="loginpage">
             <div className="wrapper">
                 <h1>Login</h1>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                <form onSubmit={handleSubmit}> 
+                <form onSubmit={handleSubmit}>
                     <div className="input-box">
-                        <input 
-                            name="usuario" 
-                            type="text" 
-                            id="usuario" 
-                            placeholder="Username" 
+                        <input
+                            name="usuario"
+                            type="text"
+                            id="usuario"
+                            placeholder="Username"
                             required
-                            value={username} 
+                            value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
                         <i className='bx bxs-user'></i>
                     </div>
                     <div className="input-box">
-                        <input 
-                            name="senha" 
-                            type="password" 
-                            id="senha" 
-                            placeholder="Password" 
+                        <input
+                            name="senha"
+                            type="password"
+                            id="senha"
+                            placeholder="Password"
                             required
-                            value={password} 
-                            onChange={(e) => setPassword(e.target.value)} 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                         <i className='bx bxs-lock-alt'></i>
                     </div>
@@ -65,41 +65,5 @@ function Login() {
         </div>
     )
 }
-
+ 
 export default Login
-
-
-/*<link to='cadastro'><
-import React, { useState } from 'react'
-import '../css/logins.css'
-import { Link } from 'react-router-dom'
-
-function Login() {
-    const [count, setCount] = useState(0);
-
-    return (
-        <div className= "loginpage">
-        <div className="wrapper">
-            <h1>Login</h1>
-            <div className="input-box">
-                <input name="usuario" type="text" id="usuario" placeholder="Username" required />
-                <i className='bx bxs-user'></i>
-            </div>
-            <div className="input-box">
-                <input name="senha" type="password" id="senha" placeholder="Password" required />
-                <i className='bx bxs-lock-alt'></i>
-            </div>
-            <div className="remember-forgot">
-                <label><input type="checkbox" /> Remember me </label>
-                <a href="#">Forgot password?</a>
-            </div>
-            <button type="submit" className="btn">Login</button>
-            <div className="register-link">
-               <p>Don't have an account?<Link to="/cadastro">Register</Link></p>
-            </div>
-        </div>
-        </div>
-    )
-}
-
-export default Login;*/
