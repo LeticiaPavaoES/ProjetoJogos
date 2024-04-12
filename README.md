@@ -1,63 +1,60 @@
-## Sistema de Catálogo de Jogos
-Este é um sistema de catálogo de jogos desenvolvido com Laravel 11.3.1 para o backend e Inertia.js com React para o frontend. 
-O sistema permite aos usuários visualizar uma lista de jogos, adicionar jogos aos favoritos, e explorar diferentes plataformas e categorias de jogos.
+## Game Catalog System
+This is a game catalog system developed with Laravel 11.3.1 for the backend and Inertia.js with React for the frontend.
+The system allows users to view a list of games, add games to favorites, and explore different game platforms and categories.
 
-## Funcionalidades Principais
-Visualização de uma lista de jogos disponíveis.
-Adição de jogos aos favoritos para acesso rápido.
-Exploração de jogos por categoria.
-Autenticação de usuário para acesso a recursos protegidos.
+## Key Features
+Viewing a list of available games.
+Adding games to favorites for quick access.
+Exploring games by category.
+User authentication for access to protected resources.
 
-## Pré-requisitos
-PHP >= 7.4 e Composer instalados globalmente.
-Node.js e npm instalados globalmente.
-Banco de dados PostgreSQL 15 (ou outro banco de dados compatível) configurado e rodando localmente ou em um servidor remoto.
+## Prerequisites
+PHP >= 7.4 and Composer installed globally.
+Node.js and npm installed globally.
+PostgreSQL 15 database (or another compatible database) configured and running locally or on a remote server.
 
-## Instalação e Uso
-
-Clone este repositório em seu ambiente local:
+## Installation and Usage
+Clone this repository to your local environment:
 
 git clone https://github.com/LeticiaPavaoES/ProjetoJogos.git
 
 
-Navegue até o diretório do projeto e instale as dependências do backend:
+Navigate to the project directory and install backend dependencies:
 
 cd ProjetoJogos/backend2
 
 composer install
 
 
-Configure o banco de dados PostgreSQL editando o arquivo .env com suas credenciais.
+Configure the PostgreSQL database by editing the .env file with your credentials.
 
-
-Execute as migrações e as seeds para criar as tabelas e popular o banco de dados:
+Run migrations and seeds to create tables and populate the database:
 
 php artisan migrate --seed
 
 
-Inicie o servidor backend:
+Start the backend server:
 
 php artisan serve
 
 
-## No diretorio backend2 e instale as dependências:
+## In the backend2 directory, install frontend dependencies:
 
 npm install
 
 
-Inicie o servidor frontend:
+Start the frontend server:
 
 npm run dev 
 
 
-Acesse o sistema em seu navegador web:
+Access the system in your web browser:
 
-APP_URL: http://127.0.0.1:8000
+http://127.0.0.1:8000
 
 
-## Segunda opcao para frontend
-
-Navegue até o diretório do frontend e instale as dependências:
+## Alternative frontend setup
+Navigate to the frontend directory and install dependencies:
 
 
 cd ../frontend
@@ -65,33 +62,54 @@ cd ../frontend
 npm install
 
 
-Inicie o servidor frontend:
+Start the frontend server:
 
 npm run dev
 
 
-Acesse o sistema em seu navegador web:
+Access the system in your web browser:
 
 Local: http://localhost:3000
 
 
-## Contribuindo
-Se você deseja contribuir com este projeto, siga estas etapas:
+## Contributing
+If you wish to contribute to this project, follow these steps:
 
-Fork este repositório.
-
-Crie uma nova branch com sua funcionalidade:
+Fork this repository.
+Create a new branch with your feature:
 
 git checkout -b minha-funcionalidade
 
-Faça suas alterações e commit:
+Make your changes and commit:
 
 git commit -m 'Adiciona minha funcionalidade'
 
-Envie para a branch principal do seu fork:
+Push to your fork's main branch:
 
 git push origin minha-funcionalidade
-Abra um pull request para revisão.
+Open a pull request for review.
 
-Licença
-Este projeto está licenciado sob a Licença MIT.
+## For future implementations in this game catalog project, some ideas include:
+
+- Rating and Comment System: Allow users to rate games and leave comments, creating a community around the catalog.
+
+- Advanced Search Filters: Enhance the search functionality with advanced filters such as genre, age rating, release date, among others.
+
+- Personalized Recommendation System: Implement a recommendation system that suggests games based on the user's browsing history and favorite games.
+
+- Integration of Videos and Trailers: Add the ability to watch videos and trailers of games directly in the system, providing users with a preview of the games.
+
+- Achievements and Trophies System: Create an achievements and trophies system for users to unlock by completing certain goals within the games.
+
+- Integration of Third-Party APIs: Integrate third-party APIs, such as game analytics APIs, to provide additional information and insights about the games listed in the catalog.
+
+- Multi-Language Support: Add support for multiple languages to make the system accessible to a wider range of users around the world.
+
+- Wishlist Functionality: Allow users to create wishlists to track the games they want to buy or play in the future.
+
+- User Profile Customization: Enable users to customize their profiles with pictures, personal information, and game preferences.
+
+- Dark Mode: Implement a dark mode to provide a more comfortable viewing option in low-light environments.
+
+## License
+This project is licensed under the MIT License.
