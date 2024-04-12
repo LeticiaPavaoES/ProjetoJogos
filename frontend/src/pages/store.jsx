@@ -8,17 +8,8 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { CgSearchLoading } from "react-icons/cg";
 import { FaXbox, FaPlaystation } from "react-icons/fa";
 import { FaComputer, FaRegStar } from "react-icons/fa6";
+import Header from '../components/header'
 
-
-const Separator = () => {
-    return (
-        <div className='separator'></div>
-    );
-};
-
-const toggleMenu = () => {
-    setMenuAberto(!menuAberto);
-};
 
 export const Store = () => {
     const [data, setData] = useState([])
@@ -65,33 +56,19 @@ export const Store = () => {
         }
     }
 
+    const Separator = () => {
+        return (
+            <div className='separator'></div>
+        );
+    };
+    
+    const toggleMenu = () => {
+        setMenuAberto(!menuAberto);
+    };
+
     return (
         <div className='StorePage'>
-            <nav className='Guia'>
-                <div>
-                <SlOptionsVertical onClick={toggleMenu} className="icone-menu" />
-                {menuAberto && (
-                    <div className="menu">
-                        <ul>
-                            <li>Plataformas</li>
-                            <li>Categorias</li>
-                            <li>Avaliações</li>
-                        </ul>
-                    </div>
-                )}
-                </div>
-                <h1>Start Games</h1>
-                <div className='cart'>
-                    <Link to="/cart">
-                        <MdLibraryBooks />
-                    </Link>
-                </div>
-                <div className='user'>
-                    <Link to="/login">
-                        <FaUser />
-                    </Link>
-                </div>
-            </nav>
+             <Header toggleMenu={toggleMenu} menuAberto={menuAberto} />
             <Separator />
             <div className='search'>
                 <input

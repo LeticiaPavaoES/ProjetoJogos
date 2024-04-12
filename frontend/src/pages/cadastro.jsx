@@ -5,6 +5,7 @@ import { MdLibraryBooks } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../css/logins.css';
+import Header from '../components/header';
 
 const Cadastro = () => {
   const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ const Cadastro = () => {
       return;
     }
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/users/register', {
+      const response = await axios.post('http://localhost:8000/register', {
         username,
         password,
         email,
@@ -48,32 +49,6 @@ const Cadastro = () => {
 
   return (
     <div className="loginpage">
-      <nav className="Guia">
-        <div>
-          <SlOptionsVertical onClick={toggleMenu} className="icone-menu" />
-          {menuAberto && (
-            <div className="menu">
-              <ul>
-                <li>Página Inicial</li>
-                <li>Plataformas</li>
-                <li>Categorias</li>
-                <li>Avaliações</li>
-              </ul>
-            </div>
-          )}
-        </div>
-        <h1>Start Games</h1>
-        <div className="cart">
-          <Link to="/cart">
-            <MdLibraryBooks />
-          </Link>
-        </div>
-        <div className="user">
-          <Link to="/login">
-            <FaUser />
-          </Link>
-        </div>
-      </nav>
       <Separator />
       <div className="wrapper">
         <h1>Cadastro</h1>

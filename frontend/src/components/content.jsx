@@ -5,6 +5,7 @@ import Login from '../pages/login.jsx';
 import GamePage from '../pages/gamepage.jsx';
 import Cadastro from '../pages/cadastro.jsx';
 import Cart from '../pages/cart.jsx';
+import Header from "./header.jsx";
 
 const Routes = () => {
    return(
@@ -14,6 +15,7 @@ const Routes = () => {
            <Route component = { GamePage }  path="/gamepage/:id" />
            <Route component = { Cadastro }  path="/cadastro" />
            <Route component = { Cart }  path="/cart" />
+           <Route component = { Header }  path="/header" />
        </BrowserRouter>
    )
 }

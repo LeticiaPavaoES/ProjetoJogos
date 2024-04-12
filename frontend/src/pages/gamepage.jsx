@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import '../css/game.css'
 import { IoMdHome } from "react-icons/io";
 import { CgSearchLoading } from "react-icons/cg";
+import Header from '../components/header';
 
 
 const GamePage = () => {
@@ -21,8 +22,16 @@ const GamePage = () => {
         fetchGamePage()
     }, [id])
 
+    const Separator = () => {
+        return (
+            <div className='separator'></div>
+        );
+    };
+
     return (
         <div>
+            <Header />
+            <Separator />
             <div className='Guia'>
                     <div className='storeh'>
                         <Link to='/'>

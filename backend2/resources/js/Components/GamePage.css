@@ -1,0 +1,56 @@
+.header {
+    background-color: purple; /* Cor de fundo rosa para o cabeçalho */
+    text-align: left;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.header h2 {
+    text-align: center;
+    color: #de96fd;
+    font-size: 30px;
+}
+
+.headerTitle {
+    color: #fff; /* Cor do texto branco para o título do cabeçalho */
+    margin-left: 30px;
+    font-size: 40px;
+}
+
+
+.gamePageContainer {
+    background-color: #de96fd; /* Fundo rosa claro */
+    padding: 20px;
+}
+
+.separator {
+    border-bottom: 1px solid #aa00e8; /* Linha separadora rosa */
+    margin-bottom: 20px;
+}
+
+.boxGame {
+    background-color: #f9c7ff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.gameDetails {
+    text-align: center;
+    justify-content: center;
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+    background-color: #d596ef;
+}
+
+.cardGame {
+    color: #333;
+    font-size: 30px; /* Cor do texto preto */
+}
+
+img {
+    text-align: center;
+    justify-content: center;
+    border-radius: 100px;
+}

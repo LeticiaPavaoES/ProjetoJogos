@@ -1,0 +1,38 @@
+.header {
+    background: linear-gradient(180deg, rgb(41, 0, 58) 0%, rgb(51, 0, 75) 50%, rgb(77, 0, 113) 100%);
+    color: white; /* Cor do texto no cabeçalho */
+    padding: 10px 20px; /* Espaçamento interno */
+  }
+  
+  .Guia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    margin: 0 auto; /* Centralizar horizontalmente */
+    display: flex; /* Tornar o contêiner da logo um flex container */
+    align-items: left;
+  }
+
+
+  h3 {
+    margin-bottom: 10px;
+    color: white; 
+    text-decoration: none;
+    margin-inline: 10px;
+    font-size: 20px;
+  }
+  
+  .user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  

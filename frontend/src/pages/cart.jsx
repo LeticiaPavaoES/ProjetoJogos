@@ -3,6 +3,7 @@ import { getItem, setItem } from '../services/LocalStorageFuncs';
 import { MdOutlineLibraryAddCheck } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { FaUser, FaHome } from 'react-icons/fa'
+import Header from "../components/header";
 
 export const Cart = () => {
     const [data, setData] = useState(getItem('glibrary') || []);
@@ -21,17 +22,8 @@ export const Cart = () => {
 
     return (
         <div className='StorePage'>
-        <div className='Guia'>
-            <Link to="/">
-                <FaHome />
-            </Link>
-            <h1>Jogos Salvos</h1>
-            <div className='user'>
-                <Link to="/login">
-                    <FaUser />
-                </Link>
-            </div>
-        </div>
+        <Header />
+        <Separator />
         <Separator />
             <div className="libraryitems">
                 <div className="GamesArea">

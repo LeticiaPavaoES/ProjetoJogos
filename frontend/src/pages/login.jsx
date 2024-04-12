@@ -6,6 +6,7 @@ import { MdLibraryBooks } from "react-icons/md"
 import { SlOptionsVertical } from "react-icons/sl";
 import { FaUser } from 'react-icons/fa'
 import '../pages/store'
+import Header from '../components/header'
 
  
 function Login() {
@@ -41,31 +42,6 @@ function Login() {
 
     return (
         <div className="loginpage">
-            <nav className='Guia'>
-                <div>
-                <SlOptionsVertical onClick={toggleMenu} className="icone-menu" />
-                {menuAberto && (
-                    <div className="menu">
-                        <ul>
-                            <li>Plataformas</li>
-                            <li>Categorias</li>
-                            <li>Avaliações</li>
-                        </ul>
-                    </div>
-                )}
-                </div>
-                <h1>Start Games</h1>
-                <div className='cart'>
-                    <Link to="/cart">
-                        <MdLibraryBooks />
-                    </Link>
-                </div>
-                <div className='user'>
-                    <Link to="/login">
-                        <FaUser />
-                    </Link>
-                </div>
-            </nav>
             <Separator />
             <div className="wrapper">
                 <h1>Login</h1>
