@@ -11,7 +11,7 @@ const Routes = () => {
        <BrowserRouter>
            <Route component = { Store }  path="/" exact />
            <Route component = { Login }  path="/login" />
-           <Route component = { GamePage }  path="/gamepage" />
+           <Route component = { GamePage }  path="/gamepage/:id" />
            <Route component = { Cadastro }  path="/cadastro" />
            <Route component = { Cart }  path="/cart" />
        </BrowserRouter>

@@ -22,7 +22,7 @@ export const Cart = () => {
     return (
         <div className='StorePage'>
         <div className='Guia'>
-            <Link to="/store">
+            <Link to="/">
                 <FaHome />
             </Link>
             <h1>Jogos Salvos</h1>

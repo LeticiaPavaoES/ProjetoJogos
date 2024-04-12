@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import '../css/logins.css'
+import { MdLibraryBooks } from "react-icons/md"
+import { SlOptionsVertical } from "react-icons/sl";
+import { FaUser } from 'react-icons/fa'
+import '../pages/store'
+
  
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const [menuAberto, setMenuAberto] = useState(false);
  
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,9 +27,46 @@ function Login() {
             setError('Credenciais inválidas. Por favor, tente novamente.');
         }
     }
- 
+
+    const Separator = () => {
+        return (
+            <div className='separator'></div>
+        );
+    };
+
+    const toggleMenu = () => {
+        setMenuAberto(!menuAberto)  
+    };
+
+
     return (
         <div className="loginpage">
+            <nav className='Guia'>
+                <div>
+                <SlOptionsVertical onClick={toggleMenu} className="icone-menu" />
+                {menuAberto && (
+                    <div className="menu">
+                        <ul>
+                            <li>Plataformas</li>
+                            <li>Categorias</li>
+                            <li>Avaliações</li>
+                        </ul>
+                    </div>
+                )}
+                </div>
+                <h1>Start Games</h1>
+                <div className='cart'>
+                    <Link to="/cart">
+                        <MdLibraryBooks />
+                    </Link>
+                </div>
+                <div className='user'>
+                    <Link to="/login">
+                        <FaUser />
+                    </Link>
+                </div>
+            </nav>
+            <Separator />
             <div className="wrapper">
                 <h1>Login</h1>
                 {error && <p style={{ color: 'red' }}>{error}</p>}

@@ -6,6 +6,8 @@ import { MdOutlineLibraryAdd, MdOutlineLibraryAddCheck, MdLibraryBooks } from "r
 import { getItem, setItem } from '../services/LocalStorageFuncs'
 import { SlOptionsVertical } from "react-icons/sl";
 import { CgSearchLoading } from "react-icons/cg";
+import { FaXbox, FaPlaystation } from "react-icons/fa";
+import { FaComputer, FaRegStar } from "react-icons/fa6";
 
 
 const Separator = () => {
@@ -14,11 +16,16 @@ const Separator = () => {
     );
 };
 
+const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+};
+
 export const Store = () => {
     const [data, setData] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
     const [cart, setCart] = useState(getItem('glibrary') || [])
     const [loading, setLoading] = useState(true);
+    const [menuAberto, setMenuAberto] = useState(false);
 
 
     useEffect(() => {
@@ -61,7 +68,18 @@ export const Store = () => {
     return (
         <div className='StorePage'>
             <nav className='Guia'>
-                <SlOptionsVertical />
+                <div>
+                <SlOptionsVertical onClick={toggleMenu} className="icone-menu" />
+                {menuAberto && (
+                    <div className="menu">
+                        <ul>
+                            <li>Plataformas</li>
+                            <li>Categorias</li>
+                            <li>Avaliações</li>
+                        </ul>
+                    </div>
+                )}
+                </div>
                 <h1>Start Games</h1>
                 <div className='cart'>
                     <Link to="/cart">
@@ -86,32 +104,47 @@ export const Store = () => {
             </div>
             <Separator />
             <div>
-            {loading ? (
-                <div className="Loading">Loading... <CgSearchLoading /></div> // Mostra uma mensagem de carregamento enquanto os dados estão sendo buscados
-            ) : (
-            <div className="GamesArea">
-                {data.map((e) => (
-                    <div className="card" key={e.id}>
-                        <h4>{e.name}</h4>
-                        <Link to={`/gamepage/${e.id}`}>
-                            <img src={e.background_image} alt={e.name} />
-                        </Link>
-                        <button className='buttoncart' onClick={() => handleClick(e)} >
-                            {
-                                cart.some((itemCart) => itemCart.id == e.id) ? (
-                                    <MdOutlineLibraryAddCheck />
-                                ) : (
-                                    <MdOutlineLibraryAdd />
-                                )
-                            }
-                        </button>
+                {loading ? (
+                    <div className="Loading">Loading... <CgSearchLoading /></div> // Mostra uma mensagem de carregamento enquanto os dados estão sendo buscados
+                ) : (
+                    <div className="GamesArea">
+                        {data.map((e) => (
+                            <div className="card" key={e.id}>
+                                <h4>{e.name}</h4>
+                                <Link to={`/gamepage/${e.id}`}>
+                                    <img src={e.background_image} alt={e.name} />
+                                </Link>
+                                <h4><FaRegStar />{e.rating}</h4>
+                                <div className="platforms-container">
+                                    {e.platforms.map((platform, index) => (
+                                        <div className="platforms" key={index}>
+                                            {platform.platform.id == 1 && <FaXbox />}
+                                            {platform.platform.id == 4 && <FaComputer />}
+                                            {platform.platform.id == 14 && <FaXbox />}
+                                            {platform.platform.id == 16 && <FaPlaystation />}
+                                            {platform.platform.id == 186 && <FaXbox />}
+                                            {platform.platform.id == 187 && <FaPlaystation />}
+                                            {platform.platform.id == 18 && <FaPlaystation />}
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className='buttoncart' onClick={() => handleClick(e)} >
+                                    {
+                                        cart.some((itemCart) => itemCart.id == e.id) ? (
+                                            <MdOutlineLibraryAddCheck />
+                                        ) : (
+                                            <MdOutlineLibraryAdd />
+                                        )
+                                    }
+                                </button>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                )}
             </div>
-            )}
-        </div>
         </div>
     )
 }
 
 export default Store
+

@@ -5,7 +5,7 @@
 
 
   color-scheme: light dark;
-  color: linear-gradient(180deg, rgb(41, 0, 58) 0%, rgb(51, 0, 75) 50%, rgb(77, 0, 113) 100%);
+  color: linear-gradient(180deg, rgb(41, 0, 58) 0%, rgb(81, 0, 119) 50%, rgb(139, 0, 204) 100%);
   background-color: #242424;
 
   font-synthesis: none;
@@ -14,6 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #9d50b2;
@@ -21,15 +22,6 @@ a {
 }
 a:hover {
   color: #640080;
-}
-
-body {
-  background-color: linear-gradient(180deg, rgb(41, 0, 58) 0%, rgb(51, 0, 75) 50%, rgb(77, 0, 113) 100%);
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {

@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import '../css/game.css'
 import { IoMdHome } from "react-icons/io";
+import { CgSearchLoading } from "react-icons/cg";
+
 
 const GamePage = () => {
     const { id } = useParams();
     const [game, setGame] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchGamePage = async () => {
             const response = await fetch(`https://api.rawg.io/api/games/${id}?key=d4f7aa0a2d0a468bab12017d96f97cf1`);
             const gameData = await response.json();
             setGame(gameData)
+          
+            console.log(game);
         }
         fetchGamePage()
     }, [id])
@@ -20,7 +25,7 @@ const GamePage = () => {
         <div>
             <div className='Guia'>
                     <div className='storeh'>
-                        <Link to='/store'>
+                        <Link to='/'>
                             <IoMdHome />
                         </Link>
                     </div>
@@ -35,7 +40,7 @@ const GamePage = () => {
                         </div>
                     </>
                 ) : (
-                    <p>Carregando...</p>
+                    <div className="Loading">Loading... <CgSearchLoading /></div>
                 )}
             </div>
         </div>
