@@ -41,10 +41,9 @@ export default function GamePage() {
                             
                             <h3>Genres: {game.genres.map(genre => genre.name).join(', ')}</h3>
                             <img src={game.background_image} alt={game.name} className="gameImage" />
-                            {/* Aqui você pode renderizar outras propriedades específicas dos objetos */}
                             <h3>Rating: {game.rating}</h3>
                             <h3>Platforms: {game.platforms.map(platform => platform.name).join(', ')}</h3>
-                            {/* Certifique-se de substituir "name" pela propriedade correta que contém o nome da plataforma */}
+                          
                             <h3>Stores: {game.stores.map(store => store.name).join(', ')}</h3>
                         </div>
                     )}

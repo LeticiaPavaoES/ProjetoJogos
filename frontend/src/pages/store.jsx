@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import '../css/game.css'
-import { FaUser } from 'react-icons/fa'
+
 import { Link } from 'react-router-dom'
-import { MdOutlineLibraryAdd, MdOutlineLibraryAddCheck, MdLibraryBooks } from "react-icons/md"
+import { MdOutlineLibraryAdd, MdOutlineLibraryAddCheck, } from "react-icons/md"
 import { getItem, setItem } from '../services/LocalStorageFuncs'
-import { SlOptionsVertical } from "react-icons/sl";
+
 import { CgSearchLoading } from "react-icons/cg";
 import { FaXbox, FaPlaystation } from "react-icons/fa";
 import { FaComputer, FaRegStar } from "react-icons/fa6";
@@ -17,6 +17,7 @@ export const Store = () => {
     const [cart, setCart] = useState(getItem('glibrary') || [])
     const [loading, setLoading] = useState(true);
     const [menuAberto, setMenuAberto] = useState(false);
+    const [setGenres] = useState(true)
 
 
     useEffect(() => {
@@ -31,6 +32,24 @@ export const Store = () => {
                 const objJson = await response.json();
                 setData(objJson.results);
                 console.log(objJson);
+            
+                const genreData = {};
+                objJson.results.forEach((game) => {
+                    game.genres.forEach((genre) => {
+                        if (!genreData[genre.name]) {
+                            genreData[genre.name] = [];
+                        }
+                        genreData[genre.name].push(game);
+                    });
+                });
+
+                const sortedGenres = Object.keys(genreData).sort();
+                const sortedGenreData = {};
+                sortedGenres.forEach((genre) => {
+                    sortedGenreData[genre] = genreData[genre];
+                });
+                setGenres(sortedGenreData);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
@@ -66,6 +85,8 @@ export const Store = () => {
         setMenuAberto(!menuAberto);
     };
 
+    
+
     return (
         <div className='StorePage'>
              <Header toggleMenu={toggleMenu} menuAberto={menuAberto} />
@@ -82,7 +103,7 @@ export const Store = () => {
             <Separator />
             <div>
                 {loading ? (
-                    <div className="Loading">Loading... <CgSearchLoading /></div> // Mostra uma mensagem de carregamento enquanto os dados estão sendo buscados
+                    <div className="Loading">Loading... <CgSearchLoading /></div> 
                 ) : (
                     <div className="GamesArea">
                         {data.map((e) => (

@@ -16,11 +16,11 @@ const Header = () => {
         <header className="header">
             <nav className="Guia">
                 <div className="logo">Start Games</div>
-                <Link to="/"><h3>Página Inicial</h3></Link>
-                <Link to="/cart"><h3>Favoritos</h3></Link>
-                <Link to="/plataformas"><h3>Plataformas</h3></Link>
-                <Link to="/categorias"><h3>Categorias</h3></Link>
-                <Link to="/avaliacoes"><h3>Avaliações</h3></Link>
+                <Link to="/"><h3>Home</h3></Link>
+                <Link to="/cart"><h3>Favorites</h3></Link>
+                <Link to="/plataformas"><h3>Platforms</h3></Link>
+                <Link to="/categorias"><h3>Categories</h3></Link>
+                <Link to="/avaliacoes"><h3>Reviews</h3></Link>
                 <div className="user">
                     <Link to="/login">
                         <FaUser />

@@ -9,7 +9,7 @@ export const Cart = () => {
     const [data, setData] = useState(getItem('glibrary') || []);
 
     const removeItem = (obj) => {
-        const arrFilter = data.filter((e) => e.id !== obj.id); // Usando 'filter' em vez de 'Filter'
+        const arrFilter = data.filter((e) => e.id !== obj.id); 
         setData(arrFilter);
         setItem('glibrary', arrFilter);
     };
@@ -25,6 +25,8 @@ export const Cart = () => {
         <Header />
         <Separator />
         <Separator />
+        <div className= "boxGame">
+            <div className= "gameDetails">
             <div className="libraryitems">
                 <div className="GamesArea">
                 {data.map((e) => ( 
@@ -37,6 +39,8 @@ export const Cart = () => {
                     </div>
                 ))}
                 </div>
+            </div>
+            </div>
             </div>
         </div>
     );

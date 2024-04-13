@@ -32,13 +32,7 @@ const GamePage = () => {
         <div>
             <Header />
             <Separator />
-            <div className='Guia'>
-                    <div className='storeh'>
-                        <Link to='/'>
-                            <IoMdHome />
-                        </Link>
-                    </div>
-                </div>
+         
         <div className="boxGame">
             <div className="gameDetails">
                 {game ? (
@@ -46,6 +40,11 @@ const GamePage = () => {
                         <div className='cardGame'>
                             <h2>{game.name}</h2>
                             <img src={game.background_image} alt={game.name} />
+                            <h3>Genres: {game.genres.map(genre => genre.name).join(', ')}</h3>
+                            <h3>Rating: {game.rating}</h3>
+                            <h3>Platforms: {game.platforms.map(platform => platform.name).join(', ')}</h3>
+                          
+                            <h3>Stores: {game.stores.map(store => store.name).join(', ')}</h3>
                         </div>
                     </>
                 ) : (
