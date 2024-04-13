@@ -1,4 +1,5 @@
-## Game Catalog System
+<p align="center" font-size=50px font->Game Catalog System</p>
+
 This is a game catalog system developed with Laravel 11.3.1 for the backend and Inertia.js with React for the frontend.
 The system allows users to view a list of games, add games to favorites, and explore different game platforms and categories.
 
